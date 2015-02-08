@@ -1,0 +1,8 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "@stable"
+    },
+    "autoload": {
+        "psr-4": { "Nash\\": "src/Nash" }
+    }
+}
