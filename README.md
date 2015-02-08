@@ -4,6 +4,8 @@
 
 # Nash
 
+*"I did have strange ideas during certain periods of time."* - John Forbes Nash, Jr.
+
 Nash is a [bijective](http://en.wikipedia.org/wiki/Bijective_numeration) [base 26](http://en.wikipedia.org/wiki/Hexavigesimal) encoder and decoder from a beautiful mind (and that is not mine).
 
 ## How to use it
