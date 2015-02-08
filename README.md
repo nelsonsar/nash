@@ -13,11 +13,11 @@ Nash is a [bijective](http://en.wikipedia.org/wiki/Bijective_numeration) [base 2
 
 $word = "are";
 
-$coveredMessage = Nash\John::coverMessage($word); //$coveredMessage = 3849
+$coveredMessage = Nash\Numerology::coverMessage($word); //$coveredMessage = 3849
 
 $coveredWord = 2056;
 
-$uncoveredMessage = Nash\John::uncoverMessage($coveredMessage); //$uncoveredMessage = 'BAC';
+$uncoveredMessage = Nash\Numerology::uncoverMessage($coveredMessage); //$uncoveredMessage = 'BAC';
 ```
 
 ## Why?

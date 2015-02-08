@@ -2,14 +2,14 @@
 
 namespace Nash;
 
-class JohnTest extends \PHPUnit_Framework_TestCase
+class NumerologyTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider messageProvider
      */
     public function testCoverMessage($message, $expectedResult)
     {
-        $result = John::coverMessage($message);
+        $result = Numerology::coverMessage($message);
 
         $this->assertEquals($expectedResult, $result);
     }
@@ -30,7 +30,7 @@ class JohnTest extends \PHPUnit_Framework_TestCase
     {
         $message = '_a_';
 
-        John::coverMessage($message);
+        Numerology::coverMessage($message);
     }
 
     /**
@@ -41,7 +41,7 @@ class JohnTest extends \PHPUnit_Framework_TestCase
     {
         $message = array();
 
-        John::coverMessage($message);
+        Numerology::coverMessage($message);
     }
 
     /**
@@ -49,7 +49,7 @@ class JohnTest extends \PHPUnit_Framework_TestCase
      */
     public function testUncoverMessage($message, $expectedResult)
     {
-        $result = John::uncoverMessage($message);
+        $result = Numerology::uncoverMessage($message);
 
         $this->assertEquals($expectedResult, $result);
     }
@@ -70,6 +70,6 @@ class JohnTest extends \PHPUnit_Framework_TestCase
     {
         $message = 'aaaaa';
 
-        John::uncoverMessage($message);
+        Numerology::uncoverMessage($message);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Nash;
 
-class John
+class Numerology
 {
     const ASCII_CODE_LETTER_A = 97;
     const ASCII_CODE_LETTER_Z = 123;
@@ -24,7 +24,7 @@ class John
             if (false === self::isAllowedLetter($letter)) {
                 throw new \InvalidArgumentException(self::INVALID_CHAR_ERROR);
             }
-            
+
             $result *= self::JOHN_NASH_BASE;
             $result += ord($letter) - (self::ASCII_CODE_LETTER_A - 1);
         }
@@ -46,11 +46,11 @@ class John
             --$coveredMessage;
             $uncoveredLetterAsciiCode = $coveredMessage % self::JOHN_NASH_BASE + self::ASCII_CODE_LETTER_A;
             $uncoveredLetter = chr($uncoveredLetterAsciiCode);
-            
+
             if (false === self::isAllowedLetter($uncoveredLetter)) {
                 throw new \InvalidArgumentException(self::INVALID_CHAR_ERROR);
             }
-            
+
             $result .= $uncoveredLetter;
             $coveredMessage = intval($coveredMessage / self::JOHN_NASH_BASE);
         }
