@@ -1,6 +1,6 @@
 # Nash
 
-Nash is a [bijective](http://en.wikipedia.org/wiki/Bijective_numeration) [base 26](http://en.wikipedia.org/wiki/Hexavigesimal) encoder and decoder.
+Nash is a [bijective](http://en.wikipedia.org/wiki/Bijective_numeration) [base 26](http://en.wikipedia.org/wiki/Hexavigesimal) encoder and decoder from a beautiful mind (and that is not mine).
 
 ## How to use it
 
@@ -18,13 +18,8 @@ $uncoveredMessage = Nash\John::uncoverMessage($coveredMessage); //$uncoveredMess
 
 ## Why?
 
-I thought that this would be nice to represent small words as numbers and I found out that is not. For example:
+I thought that this would be nice to represent small words as numbers. For example:
 
-In base26 the word **duck** is equals to **195914** (which has two more digits than the word itself). This is useful to express things like:
-
-- A = 1 (or -1);
-- AAA = 703;
-
-And things like columns from spreadsheet programs.
+In base26 the word **duck** is equals to **195914** (which is not that bad) and this is useful to express sequential letters (AA, AAA, BA, CAA and other things that look like columns from spreadsheet programs).
 
 So if you have something secret (and really like numbers...) or like numerology maybe this will help with something.
