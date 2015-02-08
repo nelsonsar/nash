@@ -1,4 +1,14 @@
 {
+    "name": "nelsonsar/nash",
+    "type": "library",
+    "homepage": "http://github.com/nelsonsar/nash",
+    "license": "MIT",
+    "authors": [
+        {
+        "name": "Nelson Senna",
+        "email": "onelsonsenna@gmail.com"
+        }
+    ],
     "require-dev": {
         "phpunit/phpunit": "@stable"
     },
