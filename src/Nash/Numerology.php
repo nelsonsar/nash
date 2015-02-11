@@ -8,13 +8,12 @@ class Numerology
     const ASCII_CODE_LETTER_Z = 123;
     const JOHN_NASH_BASE = 26;
     const INVALID_CHAR_ERROR = 'Message has invalid characters';
-    const INVALID_MESSAGE_FORMAT = 'Invalid message format';
 
     private static $letterMap = array();
 
     public static function coverMessage($message)
     {
-        if (false === is_string($message)) throw new \InvalidArgumentException(self::INVALID_MESSAGE_FORMAT);
+        if (false === is_string($message)) throw new InvalidMessageFormatException;
 
         self::createLetterMap();
         $messageAsArray = self::createReversedLetterArrayFromMessage($message);
@@ -22,7 +21,7 @@ class Numerology
 
         foreach($messageAsArray as $letter) {
             if (false === self::isAllowedLetter($letter)) {
-                throw new \InvalidArgumentException(self::INVALID_CHAR_ERROR);
+                throw new UnsupportedCharacterException;
             }
 
             $result *= self::JOHN_NASH_BASE;
@@ -34,9 +33,7 @@ class Numerology
 
     public static function uncoverMessage($coveredMessage)
     {
-        if (false === is_numeric($coveredMessage)) {
-            throw new \InvalidArgumentException(self::INVALID_MESSAGE_FORMAT);
-        }
+        if (false === is_numeric($coveredMessage)) throw new InvalidMessageFormatException;
 
         self::createLetterMap();
         $coveredMessage = abs($coveredMessage);
@@ -47,9 +44,7 @@ class Numerology
             $uncoveredLetterAsciiCode = $coveredMessage % self::JOHN_NASH_BASE + self::ASCII_CODE_LETTER_A;
             $uncoveredLetter = chr($uncoveredLetterAsciiCode);
 
-            if (false === self::isAllowedLetter($uncoveredLetter)) {
-                throw new \InvalidArgumentException(self::INVALID_CHAR_ERROR);
-            }
+            if (false === self::isAllowedLetter($uncoveredLetter)) throw new UnsupportedCharacterException;
 
             $result .= $uncoveredLetter;
             $coveredMessage = intval($coveredMessage / self::JOHN_NASH_BASE);

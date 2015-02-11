@@ -23,7 +23,7 @@ class NumerologyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException Nash\UnsupportedCharacterException
      * @expectedExceptionMessage Message has invalid characters
      */
     public function testCoverMessageShouldThrowAnExceptionWhenMessageHasNonSupportedCharacters()
@@ -34,7 +34,7 @@ class NumerologyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException Nash\InvalidMessageFormatException
      * @expectedExceptionMessage Invalid message format
      */
     public function testCoverMessageShouldThrowAnExceptionWhenMessageIsNotAString()
@@ -63,7 +63,7 @@ class NumerologyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException Nash\InvalidMessageFormatException
      * @expectedExceptionMessage Invalid message format
      */
     public function testUncoverMessageShouldThrowAnExceptionWhenMessageIsNotANumber()
